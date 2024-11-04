@@ -17,6 +17,7 @@
   <!-- font awesome cdn -->
   <script src="https://kit.fontawesome.com/eaeb9cd0c5.js" crossorigin="anonymous"></script>
   <!-- tailwind : to customize your configuration with your own design tokens. -->
+  <link rel="stylesheet" href="navbar.html">
   <script>
     tailwind.config = {
       theme: {
@@ -24,7 +25,9 @@
           colors: {
             clifford: '#da373d',
             'house-builder-primary': '#ABEF5F',
+            'house-builder-secondary': '#ABEF5F80',
             'house-builder-black': '#212121',
+            'house-builder-header-background': 'linear-gradient(0.00deg, rgb(255, 255, 255),rgba(255, 255, 255, 0) 100%);',
           },
           fontFamily: {
             manrope: ['Manrope', 'sans-serif'],
@@ -37,9 +40,9 @@
 
 <body>
   <!-- Header section -->
-  <header class="container mx-auto">
+  <header class="container mx-auto bg-gradient-to-t from-slate-100  to-slate-50">
     <!-- navbar -->
-    <div class="navbar bg-base-100">
+    <div class="navbar bg-house-builder-header-background">
       <div class="navbar-start">
         <div class="flex justify-center items-center gap-2 ">
           <!-- icon -->
@@ -65,46 +68,92 @@
         </ul>
       </div>
       <div class="navbar-end gap-4">
-        <!-- toggle button -->
-        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="size-6   w-10 h-10 border-spacing-1 bg-white rounded-full">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
-          </svg>
+
+
+        <!-- Toggle button -->
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+            </svg>
+          </div>
+          <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-2 w-52 pr-8 shadow">
+            <li><a class="font-bold">Home</a></li>
+            <li><a>Services</a></li>
+            <li><a>Portfolio</a></li>
+            <li><a>Blogs</a></li>
+            <li><a>Contact Us</a></li>
+          </ul>
 
         </div>
-       
+        <!--  -->
+
         <!-- search -->
-         <div>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0" stroke="currentColor" class="size-8
-          hidden md:block   border-spacing-1 bg-white hover:bg-gray-200   rounded-full ">
-            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-          </svg>
-          
-         </div> 
-
-          <!-- shopping-cart -->
         <div>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6
-          hidden md:block w-10 h-10 border-spacing-1  hover:bg-gray-200 bg-white rounded-full">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0"
+            stroke="currentColor" class="size-8
+          hidden md:block   border-spacing-1 bg-white hover:bg-gray-200   rounded-full ">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
           </svg>
-          
         </div>
+        <!--  -->
+
+        <!-- shopping-cart -->
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-6
+          hidden md:block w-10 h-10 border-spacing-1  hover:bg-gray-200 bg-white rounded-full">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+          </svg>
+        </div>
+        <!--  -->
 
         <!-- Book consult button -->
         <button class="btn hidden md:block bg-house-builder-primary text-house-builder-black font-bold rounded-3xl">Book
           Consult
           <i class="fa-solid fa-arrow-right w-8 h-8 bg-black text-white rounded-full -rotate-45 p-2"></i>
         </button>
+        <!--  -->
       </div>
     </div>
-
   </header>
+  <!--  -->
+
+
   <!-- Main section -->
   <main>
+    <!-- Banner section -->
+    <section>
+      <div class="bg-base-200 min-h-screen flex items-center justify-center ">
+        <div class=" text-center">
+          <!-- Hero -->
+          <div class="flex justify-center items-center">
+            <img class="w-[65%]" src="images/banner.png" alt="">
 
+          </div>
+          <!-- Text -->
+          <div class=" max-w-md md:max-w-2xl p- ">
+            <h1 class="text-2xl md:text-5xl font-bold text-center">A barn house of this design has a striking appearance
+            </h1>
+            <p class="py-6">
+              we’re not just builders; we’re dream makers. With a commitment to quality, innovation, and personalized service, we specialize in transforming your vision into a beautifully crafted home.
+            </p>
+            <!-- View Details button -->
+            <div class="flex justify-center items-center">
+              <button class="btn  bg-house-builder-secondary text-house-builder-black font-bold rounded-3xl ">View
+                Details
+                <i class="fa-solid fa-arrow-right w-8 h-8 bg-black text-white rounded-full -rotate-45 p-2"></i>
+              </button>
+            </div>
+            <!--  -->
+          </div>
+        </div>
+      </div>
+
+    </section>
   </main>
   <!-- Footer section -->
   <footer>
